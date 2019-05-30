@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>employees</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchTerm" placeholder="employee'name" (ionChange)="searchChanged($event)"
+    [debounce]="250"></ion-searchbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of results">
+
+      <ion-item button [routerLink]="['/','employees',item.empNo]">
+        <ion-avatar slot="start">
+          <img [src]="item.photo" *ngIf="item.photo != 'null'" />
+        </ion-avatar>
+        <ion-label text-wrap>
+          <h3>{{item.firstName}} {{item.lastName}}</h3>
+        </ion-label>
+        <ion-icon slot="end" name="information-circle-outline"></ion-icon>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option button color="danger" (click)="removeClicked(item)" expandable>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

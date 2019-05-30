@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+ 
+  <ion-segment [(ngModel)]="selectedView">
+    <ion-segment-button value="devs">
+      <ion-label>Employée</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+   <div [ngSwitch]="selectedView">
+    <div *ngSwitchCase="'devs'"  (ngSubmit)="onSavePers(form.value)">
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input [(ngModel)]="name" placeholder="Le Nom de l'employée"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Prénom</ion-label>
+        <ion-input [(ngModel)]="prenom" placeholder="Le Prénom de l'employée"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Date de naissance</ion-label>
+        <ion-input [(ngModel)]="datedenaissance" placeholder="jj/mm/yyyy"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="email" placeholder="exmple@gmail.com"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Departement</ion-label>
+        <ion-input [(ngModel)]="Departement" placeholder="type"  ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Salaire</ion-label>
+        <ion-input [(ngModel)]="Salaire" placeholder="0.0" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Photo</ion-label>
+        <ion-input [(ngModel)]="img" placeholder="https://..."></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit" class="btn btn-info">Add Employer</ion-button></div></div></ion-content>

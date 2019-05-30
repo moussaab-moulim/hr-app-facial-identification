@@ -1,0 +1,39 @@
+
+<form #form="ngForm" class="form-inline">
+  <div class="form-group">
+    
+    <input type="text" class="form-control"  ngModel name="motCle" > 
+   
+  </div>
+    
+    <button type="submit" class="btn btn-info">Chercher personnel  </button>
+
+</form>
+  
+  <ion-content>
+      <div class="row header">
+      
+      <div class="col">Nom</div>
+      <div class="col">date de naissance</div>
+      <div class="col">E-mail</div>
+      <div class="col">photo</div></div>
+    
+  <tbody *ngIf="personnels">
+
+    <tr *ngFor="let p of personnels" >
+
+        <div class="row" >
+
+      <div class="col">{{p.nom}}</div>
+      <div class="col">{{p.prenom}}</div>
+      <div class="col">{{p.email}}</div>
+      <div class="col">{{p.photo}}</div>
+      <div class="col"><button type="" class="btn btn-success">Editer</button></div>
+      <div class="col"><button type="" class="btn btn-danger" (click)="onDeletePers(p)">Supprimer</button></div>
+      <div class="col"><button type="" class="btn btn-info">Consulter</button></div></div>
+    </tr>
+    
+    </tbody>
+  </table> 
+</ion-content>
+  

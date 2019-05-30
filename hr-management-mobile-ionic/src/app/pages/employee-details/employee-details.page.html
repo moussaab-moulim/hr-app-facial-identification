@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>employee's details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card *ngIf="info" text-center padding>
+    <ion-item lines="none">
+      <ion-avatar class="avatar">
+        <img [src]="info.photo" />
+      </ion-avatar>
+    </ion-item>
+
+
+    <ion-card-content text-center>
+
+      <ion-card-header>
+        <ion-card-title>{{info.firstName}} {{info.lastName}}, {{age(info.birthDate)}}</ion-card-title>
+      </ion-card-header>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label>{{info.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="call" slot="start"></ion-icon>
+        <ion-label>{{info.phone}}</ion-label>
+      </ion-item>
+      <ion-item *ngIf="info.gender == 'M'">
+        <ion-icon name="male" slot="start"></ion-icon>
+        <ion-label>Male</ion-label>
+      </ion-item>
+      <ion-item *ngIf="info.gender == 'F'">
+        <ion-icon name="female" slot="start"></ion-icon>
+        <ion-label>Female</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label>{{info.hireDate}}</ion-label>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
