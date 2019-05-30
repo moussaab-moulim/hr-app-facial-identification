@@ -34,4 +34,10 @@ export class EmployeeService {
   removeEmployee(id) {
     return this.http.delete(`${this.url}employees/${id}`);
   }
+  addEmployee(id) {
+    
+  }
+  editEmployee(id) {
+    
+  }
 }
