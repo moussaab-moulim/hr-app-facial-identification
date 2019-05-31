@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+    margin: 0;padding: 0;
+}
+    ul li {
+        background: #8b9dc3;
+        padding: 2em;
+        border-radius: 4px;
+        margin-bottom: 7px;
+        display: grid;
+        grid-template-columns: 60px auto;
+}
+      ul li  p {
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 100%;
+        }

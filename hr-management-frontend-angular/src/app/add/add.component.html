@@ -1,0 +1,38 @@
+<h4>Ajouter un personnel par ici </h4>
+
+<br>
+<div class="well well-sm">
+
+	<form #form="ngForm" (ngSubmit)="onSavePers(form.value)">
+  <div class="form-group">
+    <label >Nom :</label>
+    <input type="text" class="form-control"  ngModel name="nom" >
+  </div>
+  <div class="form-group">
+    <label >Prenom :</label>
+    <input type="text" class="form-control"  ngModel name="prenom" >
+  </div>
+  <div class="form-group">
+    <label >E-mail :</label>
+    <input type="email" class="form-control"  ngModel name="email" >
+  </div>
+  <div class="form-group">
+    <label > GSM :</label>
+    <input type="text" class="form-control"  ngModel name="tel" >
+  </div>
+	<div class="form-group">
+    <label > Date de naissance :</label>
+    <input type="date" class="form-control"  ngModel name="date_ne" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Photo :</label>
+    <input type="file" id="exampleInputFile" ngModel name="photo">
+  </div>
+  
+  <button type="submit" class="btn btn-info">Ajouter</button>
+  <br>
+</form>
+
+	
+</div>
+	
