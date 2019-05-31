@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { ConsulterComponent } from './consulter/consulter.component';
 import { FormsModule }   from '@angular/forms';
+import { EditerComponent } from './editer/editer.component';
+import { ConsulterEmpComponent } from './consulter-emp/consulter-emp.component';
+import { AuthComponent } from './auth/auth.component';
 @NgModule({
   
   declarations: [
@@ -16,7 +19,10 @@ import { FormsModule }   from '@angular/forms';
     NavComponent,
     HomeComponent,
     AddComponent,
-    ConsulterComponent
+    ConsulterComponent,
+    EditerComponent,
+    ConsulterEmpComponent,
+    AuthComponent
   ],
 
   imports: [

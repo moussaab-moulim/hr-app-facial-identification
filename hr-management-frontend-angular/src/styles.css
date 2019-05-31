@@ -4,7 +4,6 @@
 body, html {
     height: 100%;
     margin: 0 auto;
-    background-color: #dfe3ee;
 }
 
 body {
@@ -33,4 +32,6 @@ section {
     width: 80%;
     margin: 0 auto;
     padding: 2em;
+
+    background-color: silver;
 }

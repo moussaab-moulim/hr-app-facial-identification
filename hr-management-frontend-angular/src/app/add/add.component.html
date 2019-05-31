@@ -1,7 +1,7 @@
 <h4>Ajouter un personnel par ici </h4>
 
 <br>
-<div class="well well-sm">
+<div >
 
 	<form #form="ngForm" (ngSubmit)="onSavePers(form.value)">
   <div class="form-group">
@@ -15,6 +15,7 @@
   <div class="form-group">
     <label >E-mail :</label>
     <input type="email" class="form-control"  ngModel name="email" >
+
   </div>
   <div class="form-group">
     <label > GSM :</label>
@@ -25,14 +26,27 @@
     <input type="date" class="form-control"  ngModel name="date_ne" >
   </div>
   <div class="form-group">
-    <label for="exampleInputFile">Photo :</label>
-    <input type="file" id="exampleInputFile" ngModel name="photo">
+    <label for="exampleInputFile"> Photo : </label>
+    <input type="file" class="form-control-file" id="exampleInputFile" ngModel name="photo">
   </div>
+
+<div class="form-group">
+    <label > Sexe:  </label><br>
+
+    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="F">
+  <label class="form-check-label" for="inlineRadio1">F</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="M">
+  <label class="form-check-label" for="inlineRadio2">M</label>
+</div>
+  </div>
+  
   
   <button type="submit" class="btn btn-info">Ajouter</button>
   <br>
 </form>
-
 	
 </div>
 	
