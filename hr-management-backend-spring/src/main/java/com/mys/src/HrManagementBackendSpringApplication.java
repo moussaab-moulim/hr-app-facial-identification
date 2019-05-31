@@ -36,7 +36,7 @@ public class HrManagementBackendSpringApplication implements CommandLineRunner {
 		restConfiguration.exposeIdsFor(Employee.class);
 		
 		// uncomment the following code to populate your database with sample users from json file in resources
-		
+		//test
 		String fileName = "/static/sampleData/data.json";
 		
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
