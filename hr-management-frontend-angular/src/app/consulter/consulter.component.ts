@@ -12,20 +12,20 @@ export class ConsulterComponent implements OnInit {
 
   constructor(private pers:DataService) { }
 
-	personnels;
+	employees;
 
   ngOnInit() {
 
 	this.pers.getAllPersonnels()
-	.subscribe(data =>{this.personnels=data;
+	.subscribe(data =>{this.employees=data;
 	},err=>{console.log(err)
 	})
 
   }
 
-  onDeletePers(per) {
+  onDeletePers(id) {
 
-    this.pers.deleteP(per).subscribe(data =>{this.personnels=data;
+    this.pers.deleteP(id).subscribe(data =>{this.employees=data;
   },err=>{console.log(err)
   })
   }
