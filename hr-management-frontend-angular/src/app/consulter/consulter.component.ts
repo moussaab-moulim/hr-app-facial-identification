@@ -10,24 +10,28 @@ import { DataService } from '../data.service';
 export class ConsulterComponent implements OnInit {
 
 
-  constructor(private pers:DataService) { }
+  constructor(private empService: DataService) { }
 
-	employees;
+  employees ;
 
   ngOnInit() {
 
-	this.pers.getAllPersonnels()
-	.subscribe(data =>{this.employees=data;
-	},err=>{console.log(err)
-	})
+    this.empService.getAllPersonnels()
+      .subscribe(data => {
+      this.employees = data;
+      }, err => {
+        console.log(err)
+      })
 
   }
 
-  onDeletePers(id) {
+  onDeletePers(emp) {
 
-    this.pers.deleteP(id).subscribe(data =>{this.employees=data;
-  },err=>{console.log(err)
-  })
+    this.empService.deleteP(emp.empNo).subscribe(data => {
+    this.employees = data;
+    }, err => {
+      console.log(err)
+    })
   }
 
 }
