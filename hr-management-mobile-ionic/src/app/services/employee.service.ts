@@ -13,7 +13,7 @@ export enum SearchType {
 
 export class EmployeeService {
 
-  url = 'http://localhost:8080/';
+  public url = 'http://localhost:8080/';
   constructor(private http: HttpClient) { }
 
   searchEmployee(name: string): Observable<any> {

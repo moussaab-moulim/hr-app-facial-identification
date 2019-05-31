@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.mys.src.entities.Employee;
 // rest all rest methods put/get/post/delete
-@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8080","*"})
 @RepositoryRestResource
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	//rest link : employees/search/byname?q=exemple search by first name or last name
