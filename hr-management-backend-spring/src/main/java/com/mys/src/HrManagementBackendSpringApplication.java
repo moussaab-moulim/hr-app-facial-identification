@@ -37,10 +37,11 @@ public class HrManagementBackendSpringApplication implements CommandLineRunner {
 		
 		// uncomment the following code to populate your database with sample users from json file in resources
 		
-		String fileName = "/static/sampleData/data.json";
+		String fileName = "static/sampleData/data.json";
 		
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		 
+		
 		File file = new File(classLoader.getResource(fileName).getFile());
 		SampleDataJson dataJson= new SampleDataJson(file);
 		dataJson.employeesData(employeeRepository);
