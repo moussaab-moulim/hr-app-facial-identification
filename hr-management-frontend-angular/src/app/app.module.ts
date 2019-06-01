@@ -12,6 +12,7 @@ import { FormsModule }   from '@angular/forms';
 import { EditerComponent } from './editer/editer.component';
 import { ConsulterEmpComponent } from './consulter-emp/consulter-emp.component';
 import { AuthComponent } from './auth/auth.component';
+import { TensorflowComponent } from './tensorflow/tensorflow.component';
 @NgModule({
   
   declarations: [
@@ -22,7 +23,8 @@ import { AuthComponent } from './auth/auth.component';
     ConsulterComponent,
     EditerComponent,
     ConsulterEmpComponent,
-    AuthComponent
+    AuthComponent,
+    TensorflowComponent
   ],
 
   imports: [
