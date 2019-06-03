@@ -1,4 +1,7 @@
-<br>
+
+<div class="card bg-light text-dark" >
+  <div class="card-body">
+    <div class="card-title">La liste des employees </div>
 
 
 <form #form="ngForm" class="form-inline">
@@ -11,31 +14,42 @@
 
 </form>
 <br>
-<br>
-<table class="table table-striped table-dark">
-  <thead class="thead-dark">
+
+<table class="table table-dark table-responsive table-striped">
+  <thead>
     <tr>
 
-      <th scope="col">Nom</th>
-      <th scope="col">Prenom</th>
-      <th scope="col">E-mail</th>
-      <th scope="col">Action 1</th>
-      <th scope="col">Action 2</th>
-      <th scope="col">Action 3</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>E-mail</th>
+      <th>Action 1</th>
+      <th>Action 2</th>
+      <th>Action 3</th>
 
     </tr>
   </thead>
   <tbody *ngIf="employees">
 
-    <tr *ngFor="let e of employees">
+    <tr *ngFor="let e of employees._embedded.employees">
 
       <td>{{e.firstName}}</td>
       <td>{{e.lastName}}</td>
       <td>{{e.email}}</td>
-      <td><button type="" class="btn btn-success">Editer</button></td>
-      <td><button type="" class="btn btn-danger" (click)="onDeletePers(e)">Supprimer</button></td>
-      <td><button type="" class="btn btn-info">Consulter</button></td>
+      <td><a class="btn btn-success" (click)="onEditEmp1(e)" >Editer</a></td>
+      <td><a class="btn btn-danger" (click)="onDeleteEmp(e)">Supprimer</a></td>
+      <td><a class="btn btn-info" (click)="onConsultEmp1(e)">Consulter</a></td>
     </tr>
 
   </tbody>
 </table>
+<nav aria-label="Page navigation example">
+
+<ul *ngIf="pages" class="pagination pagination-sm">
+  <li *ngFor="let p of pages; let i=index" class="page-item">
+    <a class="page-link" (click)="onPageEmp(i)">{{i}}</a>
+  </li>
+</ul>
+</nav>
+  </div>
+  
+</div>

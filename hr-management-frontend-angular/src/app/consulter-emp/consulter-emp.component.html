@@ -1,3 +1,19 @@
-<p>
-  consulter-emp works!
-</p>
+ 
+
+ 
+
+  
+  <div class="card" style="width:80%"  *ngIf="currentEmp">
+
+     <h3 class="text-center">Les informations sur l'employe :</h3>
+     <br>
+    <img class="card-img-top" src="{{currentEmp.photo}}" alt="Card image"style="width:30%" class="rounded-circle mx-auto d-block">
+    <div class="card-body text-center">
+      <h4 class="card-title">{{currentEmp.lastName}} {{currentEmp.firstName}}</h4>
+      <p class="card-text font-italic"> E-mail : {{currentEmp.email}}</p>
+      <p class="card-text font-italic">GSM : {{currentEmp. phone}}</p>
+      <p class="card-text font-italic"> Date de naissance : {{currentEmp.birthDate}}</p>
+      <a href="" class="btn btn-info"> retourner a l'accueil </a>
+    </div>
+  </div>
+  <br>

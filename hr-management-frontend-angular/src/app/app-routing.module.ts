@@ -3,12 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AddComponent} from './add/add.component';
 import {ConsulterComponent} from './consulter/consulter.component';
+import {AuthComponent} from './auth/auth.component';
+import {EditerComponent} from './editer/editer.component';
+import {ConsulterEmpComponent} from './consulter-emp/consulter-emp.component';
 
 const routes: Routes = [
 
 {path: '', component:HomeComponent },
 {path: 'add', component:AddComponent },
 {path: 'consulter', component:ConsulterComponent },
+{path:'login',component:AuthComponent},
+{path:'editer/:id',component:EditerComponent},
+{path:'consulterEmp/:id',component:ConsulterEmpComponent},
 
 ];
 

@@ -16,6 +16,7 @@ import com.mys.src.entities.Employee;
 @CrossOrigin(origins = {"http://localhost:8100","http://localhost:8080","*"})
 @RepositoryRestResource
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	
 	//rest link : employees/search/byname?q=exemple search by first name or last name
 	@RestResource(path = "/byname")
 	@Query("select e from Employee e where (LOWER(e.firstName)LIKE '%' || LOWER(:q) || '%'"

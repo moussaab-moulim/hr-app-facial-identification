@@ -1,3 +1,37 @@
-<p>
-  editer works!
-</p>
+<div class="card" style="width:80%">
+  <div class="card-body" *ngIf="currentEmp">
+         <h3 class="text-center">Editer les  informations de l'employe :</h3>
+
+  	  <img class="card-img-top" src="{{currentEmp.photo}}" alt="Card image" style="width:30%" class="rounded-circle mx-auto d-block">
+
+	<h4 class="card-title text-center">{{currentEmp.lastName}} {{currentEmp.firstName}}  </h4>
+  	<form #form="ngForm" (ngSubmit)="onEditEmpl(form.value)">
+  <div class="form-group">
+    <label >Nom :</label>
+    <input type="text" class="form-control"  ngModel name="lastName" [(ngModel)]="currentEmp.lastName" >
+  </div>
+  <div class="form-group">
+    <label >Prenom :</label>
+    <input type="text" class="form-control"  ngModel name="firstName" [(ngModel)]="currentEmp.firstName" >
+  </div>
+  <div class="form-group">
+    <label >E-mail :</label>
+    <input type="email" class="form-control"  ngModel name="email" [(ngModel)]="currentEmp.email" >
+
+  </div>
+  <div class="form-group">
+    <label > GSM :</label>
+    <input type="text" class="form-control"  ngModel name="phone"[(ngModel)]="currentEmp.phone"  >
+  </div>
+	<div class="form-group">
+    <label > Date de naissance :</label>
+    <input  class="form-control"  ngModel name="birthDate" [(ngModel)]="currentEmp.birthDate" >
+  </div>
+      <input type="text" class="form-control"  ngModel name="photo" [(ngModel)]="currentEmp.photo" hidden="true">
+
+  <button type="submit" class="btn btn-success btn-lg"> Editer </button>
+  <br>
+</form>
+	
+  </div>
+</div>
