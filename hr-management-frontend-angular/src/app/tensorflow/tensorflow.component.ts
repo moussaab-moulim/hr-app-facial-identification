@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as tf from '@tensorflow/tfjs';
 
 @Component({
   selector: 'app-tensorflow',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TensorflowComponent implements OnInit {
 
+  public x:tf.Tensor2D;
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
