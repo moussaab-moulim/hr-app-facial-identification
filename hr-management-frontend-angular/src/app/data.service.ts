@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';/* ApiREST relation*/
-import { Observable, throwError  } from 'rxjs';
-import { map, catchError  } from 'rxjs/operators';
-import {Employe} from './model/employe.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';/* ApiREST relation*/
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { Employe } from './model/employe.model';
 
 
 
@@ -11,7 +11,7 @@ import {Employe} from './model/employe.model';
 })
 
 export class DataService {
-  public host:string = "http://localhost:8080/";
+  public host: string = "http://localhost:8080/";
 
   constructor(private http: HttpClient) { }
 
@@ -20,34 +20,33 @@ export class DataService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
-  }  
-
-// fonctin consulter les employees :
-  getAllPersonnels(page:number, size:number): Observable<any> {
-    return this.http.get(this.host+"employees?page="+page+"&size="+size);
-      
   }
 
-// fonction supprimer un employe precis avec id 
+  // fonctin consulter les employees :
+  getAllPersonnels(page: number, size: number): Observable<any> {
+    return this.http.get(`${this.host}employees?page=${page}&size=${size}`);
+  }
+
+  // fonction supprimer un employe precis avec id
   deleteP(id) {
     return this.http.delete(`${this.host}employees/${id}`);
   }
 
-// fonction ajouter un employee :
- public saveResource(url,data):Observable<Employe>{
-   return this.http.post(url,data);
- }
+  // fonction ajouter un employee :
+  public saveResource(url, data): Observable<Employe> {
+    return this.http.post(url, data);
+  }
 
 
- // fonction consulter un employee :
- public getResource(url):Observable<Employe>{
-   return this.http.get(url);
- }
+  // fonction consulter un employee :
+  public getResource(url): Observable<Employe> {
+    return this.http.get(url);
+  }
 
-// fonction editer un employee :
- public editResource(url,data):Observable<Employe>{
-   return this.http.put(url,data);
- }
+  // fonction editer un employee :
+  public editResource(url, data): Observable<Employe> {
+    return this.http.put(url, data);
+  }
 
 
 
