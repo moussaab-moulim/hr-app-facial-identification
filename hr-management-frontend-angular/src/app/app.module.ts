@@ -8,13 +8,13 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { ConsulterComponent } from './consulter/consulter.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EditerComponent } from './editer/editer.component';
 import { ConsulterEmpComponent } from './consulter-emp/consulter-emp.component';
 import { AuthComponent } from './auth/auth.component';
 import { TensorflowComponent } from './tensorflow/tensorflow.component';
 @NgModule({
-  
+
   declarations: [
     AppComponent,
     NavComponent,
@@ -32,7 +32,7 @@ import { TensorflowComponent } from './tensorflow/tensorflow.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule      
+    FormsModule
   ],
   
   providers: [],

@@ -11,7 +11,7 @@ import { Employe } from './model/employe.model';
 })
 
 export class DataService {
-  public host: string = "http://localhost:8080/";
+  public host = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
@@ -33,18 +33,18 @@ export class DataService {
   }
 
   // fonction ajouter un employee :
-  public saveResource(url, data): Observable<Employe> {
+  public saveResource(url, data): Observable<any> {
     return this.http.post(url, data);
   }
 
 
   // fonction consulter un employee :
-  public getResource(url): Observable<Employe> {
+  public getResource(url): Observable<any> {
     return this.http.get(url);
   }
 
   // fonction editer un employee :
-  public editResource(url, data): Observable<Employe> {
+  public editResource(url, data): Observable<any> {
     return this.http.put(url, data);
   }
 
