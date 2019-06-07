@@ -1,27 +1,27 @@
-<div class="card bg-light text-dark" >
+<div class="card bg-light text-dark">
   <div class="card-body">
-      <label class="control-label">Label:</label>
-      <input type="text" [(ngModel)]="newLabel">
-      <button (click)="addImage()" class="btn btn-primary">Add Image</button>
-      <button (click)="train()" class="btn btn-primary">Train</button>
-      <button (click)="saveImage()" class="btn btn-primary">save model</button>
-    
+    <label class="control-label">Label:</label>
+    <input type="text" [(ngModel)]="newLabel">
+    <button (click)="addImage()" class="btn btn-primary">Add Image</button>
+    <button (click)="train()" class="btn btn-primary">Train</button>
+    <button (click)="saveImage()" class="btn btn-primary">save model</button>
 
-      <div class="panel panel-default">
 
-        <div class="panel-body">
-          <video #video id="video" width="320" height="240" autoplay class="img-thumbnail"></video>
-          <canvas #canvas id="canvas" width="320" height="240" class="img-thumbnail"></canvas>
-        </div>
-        <div class="panel-body">
-          <ul class="nav nav-pills">
-            <li *ngFor="let c of captures" class="list-group-item">
-              <img src="{{ c }}" height="50" />
-            </li>
-          </ul>
-        </div>
+    <h3>{{newLabel}} name : {{label}}</h3>
+
+    <div class="panel panel-default">
+
+      <div class="panel-body">
+        <video #video id="video" width="320" height="240" autoplay class="img-thumbnail"></video>
+        <canvas #canvas id="canvas" width="320" height="240" class="img-thumbnail"></canvas>
       </div>
+      <div class="panel-body">
+        <ul class="nav nav-pills">
+          <li *ngFor="let c of captures" class="list-group-item">
+            <img src="{{ c }}" height="50" />
+          </li>
+        </ul>
       </div>
-      </div>
-      
-    
+    </div>
+  </div>
+</div>

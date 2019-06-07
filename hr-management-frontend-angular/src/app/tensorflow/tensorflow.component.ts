@@ -29,10 +29,15 @@ export class TensorflowComponent implements OnInit, AfterViewInit {
       console.log('model ready');
       this.classifier.load('./assets/newModel/moussaab.json', () => {
         console.log('custom model ready');
+        this.newLabel = 'model ready';
       });
     });
     this.classifier = this.mobileNet.classification(this.video.nativeElement, () => {
       console.log('Vidéo ready');
+      this.classifier.classify((e, r) => {
+        this.gotResults(e, r);
+      });
+
     });
   }
   addImage() {
