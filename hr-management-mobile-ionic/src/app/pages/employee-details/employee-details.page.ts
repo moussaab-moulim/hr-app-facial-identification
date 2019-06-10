@@ -29,6 +29,4 @@ export class EmployeeDetailsPage implements OnInit {
     }
     return age;
   }
-  
-
 }

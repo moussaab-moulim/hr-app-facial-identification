@@ -13,6 +13,7 @@ import { EditerComponent } from './editer/editer.component';
 import { ConsulterEmpComponent } from './consulter-emp/consulter-emp.component';
 import { AuthComponent } from './auth/auth.component';
 import { TensorflowComponent } from './tensorflow/tensorflow.component';
+import { MonProfileComponent } from './mon-profile/mon-profile.component';
 @NgModule({
 
   declarations: [
@@ -24,7 +25,8 @@ import { TensorflowComponent } from './tensorflow/tensorflow.component';
     EditerComponent,
     ConsulterEmpComponent,
     AuthComponent,
-    TensorflowComponent
+    TensorflowComponent,
+    MonProfileComponent
   ],
 
   imports: [

@@ -22,12 +22,11 @@ export class ConsulterEmpComponent implements OnInit {
 // charger les infos de l'employee by id
 
   ngOnInit() {
-  
-  
+
     let url = atob(this.activatedRoute.snapshot.params.id);
-  this.restApi.getResource(url).subscribe(data=> {
-    this.currentEmp =data;
-  },err=>{
+    this.restApi.getResource(url).subscribe(data => {
+    this.currentEmp = data;
+  } , err => {
       console.log(err);
 
     })

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>bonjour : {{name}}</h3>
+      <p>je suis {{confidence*100}}% sure</p>
+    </div>
+    <div class="panel panel-default">
+
+      <div class="panel-body">
+        <video #video id="video" width="600" height="500" autoplay class="img-thumbnail"></video>
+
+      </div>
+      <button *ngIf="name" (click)="goToProfil(employee)" class="btn btn-primary">visiter profile</button>
+
+    </div>
+  </div>
+</div>

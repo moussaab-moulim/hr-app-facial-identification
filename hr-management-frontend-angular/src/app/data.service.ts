@@ -43,6 +43,10 @@ export class DataService {
     return this.http.get(url);
   }
 
+  public getEmployeeById(id): any {
+    return this.http.get(`${this.host}employees/${id}`);
+  }
+
   // fonction editer un employee :
   public editResource(url, data): Observable<any> {
     return this.http.put(url, data);

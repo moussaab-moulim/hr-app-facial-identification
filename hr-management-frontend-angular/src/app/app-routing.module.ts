@@ -7,6 +7,7 @@ import { AuthComponent } from './auth/auth.component';
 import { EditerComponent } from './editer/editer.component';
 import { ConsulterEmpComponent } from './consulter-emp/consulter-emp.component';
 import { TensorflowComponent } from './tensorflow/tensorflow.component';
+import { MonProfileComponent } from './mon-profile/mon-profile.component';
 
 const routes: Routes = [
 
@@ -17,10 +18,11 @@ const routes: Routes = [
   { path: 'editer/:id', component: EditerComponent },
   { path: 'consulterEmp/:id', component: ConsulterEmpComponent },
   { path: 'tensorflow', component: TensorflowComponent },
+  { path: 'monProfile', component: MonProfileComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 export class AppRoutingModule { }
