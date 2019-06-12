@@ -1,45 +1,56 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>add employee</ion-title>
   </ion-toolbar>
 </ion-header>
- 
-<ion-content padding>
- 
-  <ion-segment [(ngModel)]="selectedView">
-    <ion-segment-button value="devs">
-      <ion-label>Employée</ion-label>
-    </ion-segment-button>
-  </ion-segment>
 
-   <div [ngSwitch]="selectedView">
-    <div *ngSwitchCase="'devs'"  (ngSubmit)="onSavePers(form.value)">
+<ion-content padding>
+  
+  <ion-card text-center padding>
+    <form #form="ngForm" (ngSubmit)="addEmployee(form)" method="post">
       <ion-item>
-        <ion-label position="stacked">Nom</ion-label>
-        <ion-input [(ngModel)]="name" placeholder="Le Nom de l'employée"></ion-input>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input ngModel name="firstName"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input ngModel name="lastName"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Birth Date</ion-label>
+        <ion-datetime ngModel name="birthDate" display-format="YYYY-MM-DD" picker-format="YYYY-MM-DD"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" ngModel name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input type="text" ngModel name="phone"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Prénom</ion-label>
-        <ion-input [(ngModel)]="prenom" placeholder="Le Prénom de l'employée"></ion-input>
+          <ion-label position="floating">Photo</ion-label>
+          <ion-input type="text" ngModel name="photo"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Date de naissance</ion-label>
-        <ion-input [(ngModel)]="datedenaissance" placeholder="jj/mm/yyyy"></ion-input>
+            <ion-label position="floating">Hire Date</ion-label>
+            <ion-datetime ngModel name="birthDate" display-format="YYYY-MM-DD" picker-format="YYYY-MM-DD"></ion-datetime>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input [(ngModel)]="email" placeholder="exmple@gmail.com"></ion-input>
+            <ion-label position="floating" >Gender</ion-label>
+            <ion-select ngModel name="gender" placeholder="Select Gender">
+              <ion-select-option *ngFor="let entry of keys(genderEnum) " value="{{ entry }}" >{{genderEnum[entry]}}</ion-select-option>
+            </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Departement</ion-label>
-        <ion-input [(ngModel)]="Departement" placeholder="type"  ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Salaire</ion-label>
-        <ion-input [(ngModel)]="Salaire" placeholder="0.0" ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Photo</ion-label>
-        <ion-input [(ngModel)]="img" placeholder="https://..."></ion-input>
-      </ion-item>
-      <ion-button expand="block" type="submit" class="btn btn-info">Add Employer</ion-button></div></div></ion-content>
+      <ion-button type="submit" expand="full" color="primary">Add</ion-button>
+    </form>
+  </ion-card>
+
+</ion-content>

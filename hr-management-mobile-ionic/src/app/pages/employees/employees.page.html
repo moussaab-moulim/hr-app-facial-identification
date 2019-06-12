@@ -7,8 +7,8 @@
 <ion-content padding>
   <ion-searchbar [(ngModel)]="searchTerm" placeholder="employee'name" (ionChange)="searchChanged($event)"
     [debounce]="250"></ion-searchbar>
-  <ion-list>
-    <ion-item-sliding *ngFor="let item of results">
+  <ion-list *ngIf="results">
+    <ion-item-sliding *ngFor="let item of results._embedded.employees">
 
       <ion-item button [routerLink]="['/','employees',item.empNo]">
         <ion-avatar slot="start">

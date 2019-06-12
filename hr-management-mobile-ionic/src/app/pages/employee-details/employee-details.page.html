@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  
+
   <ion-card *ngIf="info" text-center padding>
     <ion-item lines="none">
       <ion-avatar class="avatar">
@@ -18,32 +18,66 @@
 
 
     <ion-card-content text-center>
+      <form [formGroup]="updateForm" (ngSubmit)="updateEmployee(form)" method="put">
+        <ion-card-header>
+          <ion-card-title *ngIf="!editMode">{{info.firstName}} {{info.lastName}}, {{age(info.birthDate)}}
+          </ion-card-title>
+          <div *ngIf="editMode">
+            <ion-item>
+              <ion-label position="floating">First Name</ion-label>
+              <ion-input    formControlName="firstName" value="{{info.firstName}}"></ion-input>
+            </ion-item>
 
-      <ion-card-header>
-        <ion-card-title>{{info.firstName}} {{info.lastName}}, {{age(info.birthDate)}}</ion-card-title>
-      </ion-card-header>
-      <ion-item>
-        <ion-icon name="mail" slot="start"></ion-icon>
-        <ion-label>{{info.email}}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="call" slot="start"></ion-icon>
-        <ion-label>{{info.phone}}</ion-label>
-      </ion-item>
-      <ion-item *ngIf="info.gender == 'M'">
-        <ion-icon name="male" slot="start"></ion-icon>
-        <ion-label>Male</ion-label>
-      </ion-item>
-      <ion-item *ngIf="info.gender == 'F'">
-        <ion-icon name="female" slot="start"></ion-icon>
-        <ion-label>Female</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-icon name="calendar" slot="start"></ion-icon>
-        <ion-label>{{info.hireDate}}</ion-label>
-      </ion-item>
+            <ion-item>
+              <ion-label position="floating">Last Name</ion-label>
+              <ion-input    formControlName="lastName"  value="{{info.lastName}}"></ion-input>
+            </ion-item>
 
+            <ion-item>
+              <ion-label position="floating">Birth Date</ion-label>
+              <ion-datetime    formControlName="birthDate" value="{{info.birthDate}}" display-format="YYYY-MM-DD" picker-format="YYYY-MM-DD">
+                  
+              </ion-datetime>
+            </ion-item>
+          </div>
+        </ion-card-header>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label>email: {{editMode ? '' : info.email}}</ion-label>
+          <ion-input *ngIf="editMode" type="email"    formControlName="email" value="{{info.email}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call" slot="start"></ion-icon>
+          <ion-label positition="floating">phone: {{editMode ? '' : info.phone}}</ion-label>
+          <ion-input *ngIf="editMode" type="tel"    naformControlNameme="phone" value="{{info.phone}}"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="editMode">
+          <ion-icon name="camera" slot="start"></ion-icon>
+          <ion-label position="floating">{{ editMode ? '' : info.photo}}</ion-label>
+          <ion-input type="text"    formControlName="photo" value="{{info.photo}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          <ion-label>{{ editMode ? '' : info.hireDate}}</ion-label>
+          <ion-datetime *ngIf="editMode"    formControlName="hireDate" display-format="YYYY-MM-DD"
+            picker-format="YYYY-MM-DD" value="{{info.hireDate}}"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-icon *ngIf="!editMode" name="{{genderEnum[info.gender]}}" slot="start"></ion-icon>
+          <ion-label>gender: {{editMode ? '' : genderEnum[info.gender]}}</ion-label>
+          <ion-select    *ngIf="editMode" formControlName="gender" placeholder="Select Gender" value="{{info.gender}}">
+            <ion-select-option *ngFor="let entry of keys(genderEnum) " value="{{ entry }}">{{genderEnum[entry]}}
+            </ion-select-option>
+          </ion-select>
+
+        </ion-item>
+        <ion-button *ngIf="editMode" type="submit" expand="full" color="primary">Commit Edit</ion-button>
+        
+      </form>
     </ion-card-content>
+    <ion-button *ngIf="!editMode" color="primary" (click)="activateEdit(editMode ? false : true)">
+        Edit employee</ion-button>
   </ion-card>
 
 </ion-content>
