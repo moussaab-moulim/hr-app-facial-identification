@@ -1,5 +1,7 @@
 {
   "name": "hr-management-mobile-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
