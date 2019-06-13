@@ -10,7 +10,7 @@
   <ion-list *ngIf="results">
     <ion-item-sliding *ngFor="let item of results._embedded.employees">
 
-      <ion-item button [routerLink]="['/','employees',item.empNo]">
+      <ion-item button [routerLink]="['/tabs','employees',item.empNo]">
         <ion-avatar slot="start">
           <img [src]="item.photo" *ngIf="item.photo != 'null'" />
         </ion-avatar>

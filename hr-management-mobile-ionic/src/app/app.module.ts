@@ -12,6 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
 // module for http api requests
 import { HttpClientModule } from '@angular/common/http';
 
+// module for using camera 
+import {
+  CameraPreview
+} from '@ionic-native/camera-preview/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 // add HttpClientModule to imports Array
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
+    CameraPreview,
+    Camera,
+    AndroidPermissions,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

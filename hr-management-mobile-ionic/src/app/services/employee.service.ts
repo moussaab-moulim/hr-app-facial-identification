@@ -8,16 +8,16 @@ export enum SearchType {
   employee = 'employee'
 }
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const url = 'http://localhost:8080/';
+const url = 'http://192.168.1.8:8080/';
 @Injectable({
   providedIn: 'root'
 })
 
 export class EmployeeService {
 
-  
+
   constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
@@ -36,8 +36,9 @@ export class EmployeeService {
   }
   private extractData(res: Response) {
     const body = res;
-    return body || { };
+    return body || {};
   }
+
 
   searchEmployee(name: string): Observable<any> {
     return this.http.get(`${url}employees/search/byname?q=${encodeURI(name)}`)
@@ -50,7 +51,7 @@ export class EmployeeService {
       map(this.extractData), catchError(this.handleError)
     );
   }
-  addEmployee(data): Observable<any>{
+  addEmployee(data): Observable<any> {
     return this.http.post(`${url}employees/`, data, httpOptions).pipe(
       catchError(this.handleError)
     );

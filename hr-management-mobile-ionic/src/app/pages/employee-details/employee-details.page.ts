@@ -3,7 +3,7 @@ import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { EmployeeService } from 'src/app/services/employee.service';
+import { EmployeeService } from '../../services/employee.service';
 import { Gender } from '../../models/Gender';
 import { Employee } from '../../models/employee';
 
@@ -59,7 +59,7 @@ this.updateForm = this.formBuilder.group({
     birthDate: [res.birthDate],
     email: [res.email],
     phone: [res.phone],
-    photo: [res.phone],
+    photo: [res.photo],
     hireDate: [res.hireDate],
     gender: [res.gender]
 });

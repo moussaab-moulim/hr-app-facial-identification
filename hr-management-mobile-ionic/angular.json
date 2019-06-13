@@ -39,7 +39,8 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": [],
+            "scripts": ["node_modules/ml5/dist/ml5.min.js",
+              "node_modules/webrtc-adapter/out/adapter.js"],
             "es5BrowserSupport": true
           },
           "configurations": {

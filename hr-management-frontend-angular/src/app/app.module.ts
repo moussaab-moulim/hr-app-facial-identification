@@ -36,7 +36,6 @@ import { MonProfileComponent } from './mon-profile/mon-profile.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  
   providers: [],
   bootstrap: [AppComponent]
 })
