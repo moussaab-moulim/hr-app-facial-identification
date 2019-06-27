@@ -18,6 +18,9 @@ export class ConsulterComponent implements OnInit {
   public currentPage:number=0;
   public totalPages:number;
   public pages:Array<number>;
+
+  searchTerm = '';
+
   ngOnInit() {
  // l'appel du fonction getAllPersonnels ( consulter les employees)
 
@@ -32,6 +35,14 @@ export class ConsulterComponent implements OnInit {
         console.log(err)
       })
 
+
+  }
+
+
+   searchChanged() {
+    this.empService.searchEmployee(this.searchTerm).subscribe(re => {
+      this.employees = re;
+    });
   }
  // l'appel du fonction deleteP => pour le button supprimer un employe
   onDeleteEmp(emp) {

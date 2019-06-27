@@ -1,13 +1,20 @@
+<app-nav></app-nav>
 
-<div class="card bg-light text-dark" >
+    <main>
+        <br><br>
+        <!--MDB Forms-->
+        <div class="row ">
+            <div class="col-md-9 mb-2 offset-1">
+
+<div class="card text-dark" >
   <div class="card-body">
-    <div class="card-title">La liste des employees </div>
+    <div class="card-title h4">La liste des employees </div>
 
 
-<form #form="ngForm" class="form-inline">
+<form #form="ngForm" class="form-inline" (ngSubmit)="searchChanged(form.value)">
   <div class="form-group">
 
-    <input type="text" class="form-control" ngModel name="motCle"> &nbsp;&nbsp;&nbsp;
+    <input type="text" class="form-control" ngModel name="searchTerm" placeholder=" chercher par Nom" > &nbsp;&nbsp;&nbsp;
 
   </div>
   <button type="submit" class="btn btn-info">Chercher personnel </button>
@@ -15,8 +22,8 @@
 </form>
 <br>
 
-<table class="table table-dark table-responsive table-striped">
-  <thead>
+<table class="table ">
+  <thead class="thead-dark">
     <tr>
 
       <th>Nom</th>
@@ -42,9 +49,10 @@
 
   </tbody>
 </table>
-<nav aria-label="Page navigation example">
 
-<ul *ngIf="pages" class="pagination pagination-sm">
+<nav aria-label="table" >
+
+<ul *ngIf="pages" class="pagination pagination-sm" style="color: blue;">
   <li *ngFor="let p of pages; let i=index" class="page-item">
     <a class="page-link" (click)="onPageEmp(i)">{{i}}</a>
   </li>
@@ -53,3 +61,7 @@
   </div>
   
 </div>
+
+</div>
+</div>
+</main>

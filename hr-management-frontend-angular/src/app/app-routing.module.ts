@@ -11,7 +11,9 @@ import { MonProfileComponent } from './mon-profile/mon-profile.component';
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'home', component: HomeComponent },
+
   { path: 'add', component: AddComponent },
   { path: 'consulter', component: ConsulterComponent },
   { path: 'login', component: AuthComponent },
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'consulterEmp/:id', component: ConsulterEmpComponent },
   { path: 'tensorflow', component: TensorflowComponent },
   { path: 'monProfile', component: MonProfileComponent },
+
 ];
 
 @NgModule({
