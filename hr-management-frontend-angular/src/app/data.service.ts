@@ -52,7 +52,10 @@ export class DataService {
     return this.http.put(url, data);
   }
 
-
+  public searchEmployee(name: string): Observable<any> {
+    return this.http.get(`${this.host}employees/search/byname?q=${encodeURI(name)}`);
+      
+  }
 
 }
 

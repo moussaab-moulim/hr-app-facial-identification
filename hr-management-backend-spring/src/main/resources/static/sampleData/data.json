@@ -55,6 +55,58 @@
       {
          "gender":"female",
          "name":{
+            "title":"mlle",
+            "first":"soukaina",
+            "last":"warach"
+         },
+         "location":{
+            "street":"mohammedia",
+            "city":"mohammedia",
+            "state":"grand casablanca",
+            "postcode":20800,
+            "coordinates":{
+               "latitude":"-81.6473",
+               "longitude":"136.1624"
+            },
+            "timezone":{
+               "offset":"-3:00",
+               "description":"Brazil, Buenos Aires, Georgetown"
+            }
+         },
+         "email":"soukaina.ws@gmail.com",
+         "login":{
+            "uuid":"3b855e41-36fc-422a-ae58-d2514fb8af14",
+            "username":"orangemouse962",
+            "password":"t3gldj80",
+            "salt":"x8WlhNP3",
+            "md5":"010a7ab791e3ae81e02e6c0ba03f5378",
+            "sha1":"5924f85cdc25aed75eb421602038890e8fa89983",
+            "sha256":"7f24ad306a6463876747f1857d25ad3783f2cd1b97215db17e4f42feec9c88f1"
+         },
+         "dob":{
+            "date":"1994-09-13T07:56:29Z",
+            "age":25
+         },
+         "registered":{
+            "date":"2019-06-12T19:58:58Z",
+            "age":12
+         },
+         "phone":"(212)65519000",
+         "cell":"(245)-897-1271",
+         "id":{
+            "name":"SSN",
+            "value":"036-95-6432"
+         },
+         "picture":{
+            "large":"https://lh3.googleusercontent.com/a-/AAuE7mCGj2X9MtbrjvkMLRL1oVTNqFEOvCAdSBLMowyGWw=s96",
+            "medium":"https://lh3.googleusercontent.com/a-/AAuE7mCGj2X9MtbrjvkMLRL1oVTNqFEOvCAdSBLMowyGWw=s96",
+            "thumbnail":"https://lh3.googleusercontent.com/a-/AAuE7mCGj2X9MtbrjvkMLRL1oVTNqFEOvCAdSBLMowyGWw=s96"
+         },
+         "nat":"MA"
+      },
+      {
+         "gender":"female",
+         "name":{
             "title":"miss",
             "first":"crystal",
             "last":"reyes"
