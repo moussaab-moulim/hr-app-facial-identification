@@ -10,22 +10,10 @@ import { TensorflowComponent } from './tensorflow/tensorflow.component';
 import { MonProfileComponent } from './mon-profile/mon-profile.component';
 
 const routes: Routes = [
-<<<<<<< Updated upstream
 
-<<<<<<< HEAD
-  { path: '', component: HomeComponent },
-=======
-{path: '', component:HomeComponent },
-{path: 'add', component:AddComponent },
-{path: 'consulter', component:ConsulterComponent },
-{path:'login',component:AuthComponent},
-{path:'editer/:id',component:EditerComponent},
-{path:'consulterEmp/:id',component:ConsulterEmpComponent},
-
-=======
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'home', component: HomeComponent },
->>>>>>> soukaina
+
   { path: 'add', component: AddComponent },
   { path: 'consulter', component: ConsulterComponent },
   { path: 'login', component: AuthComponent },
@@ -33,10 +21,7 @@ const routes: Routes = [
   { path: 'consulterEmp/:id', component: ConsulterEmpComponent },
   { path: 'tensorflow', component: TensorflowComponent },
   { path: 'monProfile', component: MonProfileComponent },
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> soukaina
+
 ];
 
 @NgModule({
