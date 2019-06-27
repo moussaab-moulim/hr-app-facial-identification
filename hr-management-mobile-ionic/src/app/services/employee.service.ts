@@ -10,7 +10,7 @@ export enum SearchType {
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const url = 'http://192.168.1.8:8080/';
+const url = 'http://192.168.43.20:8080/';
 @Injectable({
   providedIn: 'root'
 })
