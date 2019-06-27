@@ -8,6 +8,7 @@ import {EditerComponent} from './editer/editer.component';
 import {ConsulterEmpComponent} from './consulter-emp/consulter-emp.component';
 
 const routes: Routes = [
+<<<<<<< Updated upstream
 
 {path: '', component:HomeComponent },
 {path: 'add', component:AddComponent },
@@ -16,6 +17,17 @@ const routes: Routes = [
 {path:'editer/:id',component:EditerComponent},
 {path:'consulterEmp/:id',component:ConsulterEmpComponent},
 
+=======
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'home', component: HomeComponent },
+  { path: 'add', component: AddComponent },
+  { path: 'consulter', component: ConsulterComponent },
+  { path: 'login', component: AuthComponent },
+  { path: 'editer/:id', component: EditerComponent },
+  { path: 'consulterEmp/:id', component: ConsulterEmpComponent },
+  { path: 'tensorflow', component: TensorflowComponent },
+  { path: 'monProfile', component: MonProfileComponent },
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
