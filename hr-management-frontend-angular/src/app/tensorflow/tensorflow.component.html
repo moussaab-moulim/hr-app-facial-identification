@@ -5,7 +5,7 @@
         <br><br>
         <!--MDB Forms-->
         <div class="row ">
-            <div class="col-md-6 mb-4 offset-3">
+            <div class="col-md-9 mb-4 offset-1">
 <div class="card bg-light text-dark">
   <div class="card-body">
     <label class="control-label">Label:</label>
@@ -17,14 +17,15 @@
     <h2 *ngIf="modelReady">Model is ready you can start retraining</h2>
     <h2 *ngIf="modelTrained"></h2>
     <h3>name : {{label}}</h3>
+    
+    <div class="card ">
 
-    <div class="panel panel-default">
-
-      <div class="panel-body">
+      <div class="card-body">
         <video #video id="video" width="320" height="240" autoplay class="img-thumbnail"></video>
         <canvas #canvas id="canvas" width="320" height="240" class="img-thumbnail"></canvas>
       </div>
-      <div class="panel-body">
+      <br>
+      <div class="card-body">
         <ul class="nav nav-pills">
           <li *ngFor="let c of captures" class="list-group-item">
             <img src="{{ c }}" height="50" />
