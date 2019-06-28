@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ToastController, PopoverController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EmployeeService } from 'src/app/services/employee.service';
-import { ToastController } from '@ionic/angular';
+import { EmployeeService } from '../../services/employee.service';
+import {  NgForm} from '@angular/forms';
+
 
 @Component({
   selector: 'app-employees',
@@ -13,18 +14,23 @@ export class EmployeesPage implements OnInit {
 
   results: Array<any>;
   searchTerm = '';
+  firstLoad=true;
   constructor(private employeeService: EmployeeService, private toastController: ToastController,
-              private loadingController: LoadingController, private router: Router) { }
+    private loadingController: LoadingController, private router: Router, private popOverController: PopoverController) { }
 
   ngOnInit() {
-    this.employeeService.searchEmployee(this.searchTerm).subscribe(re => {
-      this.results = re;
-    });
-  }
 
+  }
+  addApi(form: NgForm) {
+    this.employeeService.setUrl(form.value.ip);
+    console.log('pop', this.employeeService.url);
+    this.firstLoad=false;
+    this.searchChanged();
+  }
   searchChanged() {
     this.employeeService.searchEmployee(this.searchTerm).subscribe(re => {
       this.results = re;
+      console.log(this.results['_embedded']['employees']);
     });
   }
   async removeClicked(e) {

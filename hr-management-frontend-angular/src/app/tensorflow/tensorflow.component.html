@@ -5,9 +5,10 @@
     <button (click)="addImage()" class="btn btn-primary">Add Image</button>
     <button (click)="train()" class="btn btn-primary">Train</button>
     <button (click)="saveImage()" class="btn btn-primary">save model</button>
-
-
-    <h3>{{newLabel}} name : {{label}}</h3>
+    
+    <h2 *ngIf="modelReady">Model is ready you can start retraining</h2>
+    <h2 *ngIf="modelTrained"></h2>
+    <h3>name : {{label}}</h3>
 
     <div class="panel panel-default">
 

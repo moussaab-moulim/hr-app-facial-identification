@@ -15,6 +15,7 @@ export class TensorflowComponent implements OnInit, AfterViewInit {
   public confidence;
   public newLabel;
   public modelReady = false;
+  public modelTrained = false;
   public currentProgress = 0;
   public loss: number;
   public iteration: number;
@@ -27,17 +28,25 @@ export class TensorflowComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.mobileNet = ml5.featureExtractor('MobileNet', () => {
       console.log('model ready');
+      
       this.classifier.load('./assets/newModel/moussaab.json', () => {
         console.log('custom model ready');
-        this.newLabel = 'model ready';
+        this.modelReady = true;
+        this.classify();
       });
     });
     this.classifier = this.mobileNet.classification(this.video.nativeElement, () => {
       console.log('Vidéo ready');
-      this.classifier.classify((e, r) => {
-        this.gotResults(e, r);
-      });
-
+    });
+  }
+  classify() {
+    this.classifier.classify((e, r) => {
+      console.log('1 ready');
+      this.gotResults(e, r);
+      console.log('2 ready');
+      if (r && r[0]) {
+        console.log(this.label);
+      }
     });
   }
   addImage() {
@@ -54,7 +63,8 @@ export class TensorflowComponent implements OnInit, AfterViewInit {
         this.mobileNet.classify((e, r) => {
           this.gotResults(e, r);
         });
-        this.modelReady = true;
+        this.modelTrained = true;
+        alert("Model has been trained");
       } else {
         this.zone.run(() => {
           ++this.currentProgress;
@@ -90,6 +100,7 @@ export class TensorflowComponent implements OnInit, AfterViewInit {
       console.log(err);
     } else {
       this.zone.run(() => {
+        console.log('label', results[0].label);
         this.label = results[0].label;
         this.confidence = results[0].confidence;
       });

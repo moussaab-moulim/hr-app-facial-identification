@@ -38,15 +38,6 @@ export class MonProfileComponent implements OnInit, AfterViewInit {
     this.classifier.classify((e, r) => {
       console.log('1 ready');
       this.gotResults(e, r);
-      console.log('2 ready');
-      if (r && r[0]) {
-        console.log(this.label);
-        this.empService.getEmployeeById(this.label).subscribe(data => {
-          this.employee = data;
-          console.log(this.employee);
-          this.name = this.employee.firstName + ' ' + this.employee.lastName;
-        });
-      }
     });
   }
   public ngAfterViewInit() {
@@ -63,9 +54,13 @@ export class MonProfileComponent implements OnInit, AfterViewInit {
       console.log(err);
     } else {
       this.zone.run(() => {
+        console.log('label', results[0].label);
         this.label = results[0].label;
         this.confidence = results[0].confidence;
-
+        this.empService.getEmployeeById(this.label).subscribe(data => {
+          this.employee = data;
+          this.name = this.employee.firstName + ' ' + this.employee.lastName;
+        });
       });
       this.mobileNet.classify((e, r) => {
         this.gotResults(e, r);

@@ -25,6 +25,7 @@ export class AddPage implements OnInit {
   }
 
   ngOnInit() {
+   
   }
 
   async addEmployee(form: NgForm) {

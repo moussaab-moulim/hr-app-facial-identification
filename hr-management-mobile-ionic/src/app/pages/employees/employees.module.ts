@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EmployeesPage } from './employees.page';
+import { ApiPopoverComponent } from 'src/app/api-popover/api-popover.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EmployeesPage]
+  entryComponents:[ApiPopoverComponent],
+  declarations: [EmployeesPage, ApiPopoverComponent]
 })
 export class EmployeesPageModule {}

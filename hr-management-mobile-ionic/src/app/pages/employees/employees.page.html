@@ -3,6 +3,15 @@
     <ion-title>employees</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-card *ngIf="firstLoad">
+  <form #form="ngForm" (ngSubmit)="addApi(form)" method="post">
+    <ion-item>
+      <ion-label position="floating">ip: </ion-label>
+      <ion-input ngModel name="ip"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="full" color="primary">Go</ion-button>
+  </form>
+</ion-card>
 
 <ion-content padding>
   <ion-searchbar [(ngModel)]="searchTerm" placeholder="employee'name" (ionChange)="searchChanged($event)"
@@ -15,7 +24,7 @@
           <img [src]="item.photo" *ngIf="item.photo != 'null'" />
         </ion-avatar>
         <ion-label text-wrap>
-          <h3>{{item.firstName}} {{item.lastName}}</h3>
+          <h3>{{item.firstName}} {{item.lastName}} {{item.empNo}}</h3>
         </ion-label>
         <ion-icon slot="end" name="information-circle-outline"></ion-icon>
       </ion-item>

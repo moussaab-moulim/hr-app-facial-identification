@@ -10,12 +10,12 @@
 
   
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-button *ngIf="name" (click)="goToProfil(label)" color="primary">go to profile</ion-button>
+  <ion-fab *ngIf="name" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-button  (click)="goToProfil(label)" color="primary">go to profile</ion-button>
     </ion-fab>
     
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-      <ion-button *ngIf="cl" (click)="classify()" color="primary"> identify </ion-button>
+  <ion-fab *ngIf="cl" vertical="bottom" horizontal="start" slot="fixed">
+      <ion-button  (click)="classify()" color="primary"> identify </ion-button>
     </ion-fab>
 
 </ion-content>

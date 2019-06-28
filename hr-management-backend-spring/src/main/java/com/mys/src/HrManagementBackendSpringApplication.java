@@ -49,8 +49,8 @@ public class HrManagementBackendSpringApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// show ids
-		//restConfiguration.exposeIdsFor(Employee.class);
+		 //show ids
+		restConfiguration.exposeIdsFor(Employee.class);
 
 		//restConfiguration.exposeIdsFor(AbsenceSchedule.class);
 

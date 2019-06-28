@@ -50,7 +50,8 @@ export class IdentifyMePage implements OnInit, AfterViewInit {
       console.log('model ready');
       this.classifier.load('./assets/newModel/moussaab.json', () => {
         console.log('custom model ready');
-        this.cl = true;
+        //this.cl = true;
+        this.classify();
       });
     });
     this.classifier = this.mobileNet.classification(this.video.nativeElement, () => {
@@ -62,14 +63,7 @@ export class IdentifyMePage implements OnInit, AfterViewInit {
       console.log('1 ready');
       this.gotResults(e, r);
       console.log('2 ready');
-      if (r && r[0]) {
-        console.log(this.label);
-        this.empService.getEmployeeDetails(this.label).subscribe(data => {
-          this.employee = data;
-          console.log(this.employee);
-          this.name = this.employee.firstName + ' ' + this.employee.lastName;
-        });
-      }
+      
     });
   }
   ngAfterViewInit(): void {
@@ -106,6 +100,12 @@ export class IdentifyMePage implements OnInit, AfterViewInit {
         this.label = results[0].label;
         this.confidence = results[0].confidence;
 
+        console.log(this.label);
+        this.empService.getEmployeeDetails(this.label).subscribe(data => {
+          this.employee = data;
+          console.log(this.employee);
+          this.name = this.employee.firstName + ' ' + this.employee.lastName;
+        });
       });
       this.mobileNet.classify((e, r) => {
         this.gotResults(e, r);
