@@ -28,13 +28,11 @@ export class TensorflowComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.mobileNet = ml5.featureExtractor('MobileNet', () => {
       console.log('model ready');
-      /*
       this.classifier.load('./assets/newModel/moussaab.json', () => {
         console.log('custom model ready');
         this.modelReady = true;
         this.classify();
       });
-      */
     });
     this.classifier = this.mobileNet.classification(this.video.nativeElement, () => {
       console.log('Vidéo ready');
